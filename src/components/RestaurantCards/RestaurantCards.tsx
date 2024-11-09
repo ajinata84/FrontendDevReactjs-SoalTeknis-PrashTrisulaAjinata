@@ -1,4 +1,3 @@
-import { Star } from "lucide-react";
 import { Button } from "../ui/button";
 import { Restaurant } from "@/types/Restaurant";
 import { renderStars } from "@/components/renderStars";

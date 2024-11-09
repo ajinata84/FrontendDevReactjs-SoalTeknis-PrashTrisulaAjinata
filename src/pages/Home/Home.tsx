@@ -21,7 +21,9 @@ import { RestaurantModal } from "@/components/RestaurantModal/RestaurantModal";
 
 export default function Home() {
   const [allRestaurants, setAllRestaurants] = useState<Restaurant[]>([]);
-  const [filteredRestaurants, setFilteredRestaurants] = useState<Restaurant[]>([]);
+  const [filteredRestaurants, setFilteredRestaurants] = useState<Restaurant[]>(
+    []
+  );
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
@@ -29,42 +31,56 @@ export default function Home() {
   const [selectedPrice, setSelectedPrice] = useState("");
   const [sheetOpen, setSheetOpen] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState("All");
-  const [selectedRestaurant, setSelectedRestaurant] = useState<RestaurantDetail>({
-    id: 0,
-    image: "",
-    name: "",
-    openStatus: "",
-    price: "",
-    rating: 0,
-    reviews: [],
-  });
+  const [selectedRestaurant, setSelectedRestaurant] =
+    useState<RestaurantDetail>({
+      id: 0,
+      image: "",
+      name: "",
+      openStatus: "",
+      price: "",
+      rating: 0,
+      reviews: [],
+    });
 
-  const isPriceInRange = (priceRange: string | null | undefined, selectedLevel: string): boolean => {
+  const isPriceInRange = (
+    priceRange: string | null | undefined,
+    selectedLevel: string
+  ): boolean => {
     if (!priceRange) return false;
-    
-    const range = priceRange.replace(/\s/g, '').split('-');
-    
+
+    const range = priceRange.replace(/\s/g, "").split("-");
+
     if (range.length === 1) {
       return range[0] === selectedLevel;
     }
-    
-    const startLevel = range[0].length; 
+
+    const startLevel = range[0].length;
     const endLevel = range[1].length;
     const selectedLength = selectedLevel.length;
-    
+
     return selectedLength >= startLevel && selectedLength <= endLevel;
   };
 
   const applyFilters = (restaurants: Restaurant[]) => {
-    if (!restaurants) return [];
-    
-    return restaurants.filter((restaurant) => {
-      const passesOpenFilter = !openNow || restaurant.openStatus === "Open";
+    if (!Array.isArray(restaurants)) {
+      console.error("Invalid restaurants data:", restaurants);
+      return [];
+    }
 
-      const passesPriceFilter = !selectedPrice || isPriceInRange(restaurant.price, selectedPrice);
+    try {
+      return restaurants.filter((restaurant) => {
+        if (!restaurant) return false;
 
-      return passesOpenFilter && passesPriceFilter;
-    });
+        const passesOpenFilter = !openNow || restaurant.openStatus === "Open";
+        const passesPriceFilter =
+          !selectedPrice || isPriceInRange(restaurant.price, selectedPrice);
+
+        return passesOpenFilter && passesPriceFilter;
+      });
+    } catch (error) {
+      console.error("Error applying filters:", error);
+      return [];
+    }
   };
 
   useEffect(() => {
@@ -164,7 +180,9 @@ export default function Home() {
                   <DropdownMenuRadioItem value="$">$</DropdownMenuRadioItem>
                   <DropdownMenuRadioItem value="$$">$$</DropdownMenuRadioItem>
                   <DropdownMenuRadioItem value="$$$">$$$</DropdownMenuRadioItem>
-                  <DropdownMenuRadioItem value="$$$$">$$$$</DropdownMenuRadioItem>
+                  <DropdownMenuRadioItem value="$$$$">
+                    $$$$
+                  </DropdownMenuRadioItem>
                 </DropdownMenuRadioGroup>
               </DropdownMenuContent>
             </DropdownMenu>

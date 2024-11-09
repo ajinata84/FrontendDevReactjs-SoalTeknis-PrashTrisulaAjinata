@@ -1,0 +1,65 @@
+{
+  "status": true,
+  "message": "Success",
+  "timestamp": 1731078730110,
+  "data": {
+    "totalRecords": 654,
+    "totalPages": 21,
+    "data": [
+      {
+        "restaurantsId": "Restaurant_Review-g297710-d14917627-Reviews-SaigonSan_Restaurant_Rooftop_Terrace-Malang_East_Java_Java",
+        "locationId": 14917627,
+        "name": "SaigonSan Restaurant & Rooftop Terrace",
+        "averageRating": 5,
+        "userReviewCount": 157,
+        "currentOpenStatusCategory": "OPEN",
+        "currentOpenStatusText": "Open now",
+        "priceTag": "$$ - $$$",
+        "hasMenu": false,
+        "menuUrl": null,
+        "isDifferentGeo": false,
+        "parentGeoName": "Malang",
+        "distanceTo": null,
+        "awardInfo": null,
+        "isLocalChefItem": false,
+        "isPremium": false,
+        "isStoryboardPublished": false,
+        "establishmentTypeAndCuisineTags": ["Asian", "Thai", "Vietnamese"],
+        "offers": {
+          "hasDelivery": null,
+          "hasReservation": null,
+          "slot1Offer": null,
+          "slot2Offer": null,
+          "restaurantSpecialOffer": null
+        },
+        "heroImgUrl": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/13/c1/17/ef/getlstd-property-photo.jpg?w=1200&h=800&s=1",
+        "heroImgRawHeight": 854,
+        "heroImgRawWidth": 1280,
+        "squareImgUrl": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/13/c1/17/ef/getlstd-property-photo.jpg?w=200&h=200&s=1",
+        "squareImgRawLength": 0,
+        "thumbnail": {
+          "photo": {
+            "photoSizeDynamic": {
+              "urlTemplate": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/13/c1/17/ef/getlstd-property-photo.jpg?w={width}&h={height}&s=1",
+              "maxHeight": 854,
+              "maxWidth": 1280
+            }
+          }
+        },
+        "reviewSnippets": {
+          "reviewSnippetsList": [
+            {
+              "reviewText": "Great ￹Thai food￻ in a gorgeous museum-like space and good vegetarian options",
+              "reviewUrl": "https://www.tripadvisor.com/ShowUserReviews-g297710-d14917627-r860813694-SaigonSan_Restaurant_Rooftop_Terrace-Malang_East_Java_Java.html"
+            },
+            {
+              "reviewText": "Simply perfect!",
+              "reviewUrl": "https://www.tripadvisor.com/ShowUserReviews-g297710-d14917627-r961965555-SaigonSan_Restaurant_Rooftop_Terrace-Malang_East_Java_Java.html"
+            }
+          ]
+        }
+      }
+    ],
+    "currentPage": 1
+  }
+}

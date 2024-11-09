@@ -1,50 +1,101 @@
-# React + TypeScript + Vite
+# SekawanMedia Test Project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React-based web application built with Vite, TypeScript, and TailwindCSS.
 
-Currently, two official plugins are available:
+Deployed at [sekawanmedia-fe.djie.cloud](https://sekawanmedia-fe.djie.cloud/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Api source is from https://github.com/ajinata84/Sekawan-Media-Test-Simple-API accessed from [sekawanmedia-be.djie.cloud](https://sekawanmedia-be.djie.cloud/)
 
-## Expanding the ESLint configuration
+## Prerequisites
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Before you begin, ensure you have the following installed:
 
-- Configure the top-level `parserOptions` property like this:
+- Node.js (version 14 or higher)
+- npm or yarn package manager
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## Installation
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/ajinata84/Sekawan-Media-Test-Simple-API.git
+cd FrontendDevReactjs-SoalTeknis-PrashTrisulaAjinata
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+1. Install dependencies:
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+```bash
+npm install
+# or
+yarn
+```
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+## Available Scripts
+
+In the project directory, you can run:
+
+- `npm run dev` - Starts the development server
+- `npm run build` - Builds the app for production
+- `npm run lint` - Runs ESLint to check code quality
+- `npm run preview` - Locally preview production build
+
+## Project Structure
+
+```
+
+FrontendDevReactjs-SoalTeknis-PrashTrisulaAjinata/
+├── src/
+├── public/
+├── index.html
+├── package.json
+├── tsconfig.json
+├── vite.config.ts
+├── postcss.config.js
+└── tailwind.config.js
+```
+
+## Tech Stack
+
+- **Framework:** React 18.3.1
+- **Build Tool:** Vite 5.4.10
+- **Language:** TypeScript 5.6.2
+- **Styling:**
+    - TailwindCSS 3.4.14
+    - tailwind-merge
+    - tailwindcss-animate
+- **UI Components:**
+    - shadcn
+    - Radix UI Primitives
+    - Lucide React icons
+- **Routing:** React Router DOM 6.28.0
+- **HTTP Client:** Axios 1.7.7
+- **Development Tools:**
+    - ESLint
+    - TypeScript ESLint
+    - Various React-specific ESLint plugins
+
+## Dependencies
+
+### Core Dependencies
+
+```json
+{
+  "react": "^18.3.1",
+  "react-dom": "^18.3.1",
+  "react-router-dom": "^6.28.0",
+  "axios": "^1.7.7"
+}
+```
+
+### UI Dependencies
+
+```json
+{
+  "@radix-ui/react-checkbox": "^1.1.2",
+  "@radix-ui/react-dialog": "^1.1.2",
+  "@radix-ui/react-dropdown-menu": "^2.1.2",
+  "@radix-ui/react-label": "^2.1.0",
+  "@radix-ui/react-slot": "^1.1.0",
+  "lucide-react": "^0.455.0"
+}
 ```

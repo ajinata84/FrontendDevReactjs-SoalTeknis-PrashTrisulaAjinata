@@ -13,6 +13,12 @@ Before you begin, ensure you have the following installed:
 - Node.js (version 14 or higher)
 - npm or yarn package manager
 
+## .env File
+
+```
+VITE_API_URL = "API_URL"
+```
+
 ## Installation
 
 1. Clone the repository:
